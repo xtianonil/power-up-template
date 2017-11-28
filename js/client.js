@@ -108,7 +108,7 @@ var getBadges = function(t){
       // you can mix and match between static and dynamic
       title: 'Detail Badge', // for detail badges only
       //text: estimatedTimeSelector.value,
-      text: 'Static2',
+      text: 'Static',
       icon: GRAY_ICON, // for card front badges only
       color: null
     }, {
@@ -335,7 +335,7 @@ TrelloPowerUp.initialize({
     return getBadges(t);
   },*/
   'card-badges': function(t, options) {
-    return t.get('card', 'private', 'estimatedTime')
+    return t.get('card', 'shared', 'estimatedTime')
     .then(function(estimate) {
       return [{
         //icon: estimate ? GREY_ROCKET_ICON : WHITE_ROCKET_ICON,
