@@ -24,12 +24,16 @@ t.render(function(){
     if(savedVegetable && /[a-z]+/.test(savedVegetable)){
       vegetableSelector.value = savedVegetable;
     }
+    estimatedTimeSelector.value = savedEstimatedTime;
+    actualTimeSelector.value = savedActualTime;
+    /*
     if(savedEstimatedTime && /[a-z]+/.test(savedEstimatedTime)){
       estimatedTimeSelector.value = savedEstimatedTime;
     }
     if(savedActualTime && /[a-z]+/.test(savedActualTime)){
       actualTimeSelector.value = savedActualTime;
     }
+    */
   })
   .then(function(){
     t.sizeTo('#content')
