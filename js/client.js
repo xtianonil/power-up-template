@@ -84,11 +84,25 @@ var randomBadgeColor = function() {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
 };
 
+  /*
+    return t.get('card', 'shared', 'estimatedTime')
+    .then(function(estimate) {
+      return [{
+        //icon: estimate ? GREY_ROCKET_ICON : WHITE_ROCKET_ICON,
+        text: 'Estimate: '+estimate || 'No Estimate!',
+        //color: estimate ? null : 'red',
+        color: 'red',
+      }];  
+    });*/
 var getBadges = function(t){
+  /*
   return t.card('name')
   .get('name')
   .then(function(cardName){
     console.log('We just loaded the card name for fun: ' + cardName);
+  */
+    return t.get('card', 'shared', 'estimatedTime')
+    .then(function(estimate) {
     
     return [{
       // dynamic badges can have their function rerun after a set number
@@ -106,11 +120,11 @@ var getBadges = function(t){
     }, {
       // its best to use static badges unless you need your badges to refresh
       // you can mix and match between static and dynamic
-      title: 'Detail Badge', // for detail badges only
-      //text: estimatedTimeSelector.value,
-      text: 'Static',
-      icon: GRAY_ICON, // for card front badges only
-      color: null
+      //title: 'Detail Badge', // for detail badges only
+      text: 'Estimate: '+estimate || 'No Estimate!',
+      //text: 'Static',
+      //icon: GRAY_ICON, // for card front badges only
+      color: 'red'
     }, {
       // card detail badges (those that appear on the back of cards)
       // also support callback functions so that you can open for example
