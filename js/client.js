@@ -6,6 +6,7 @@ var Promise = TrelloPowerUp.Promise;
 
 var estimatedTimeSelector = document.getElementById('estimatedTime');
 var actualTimeSelector = document.getElementById('actualTime');
+alert(estimatedTimeSelector.value);
 /*
 
 Trello Data Access
