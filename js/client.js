@@ -369,6 +369,8 @@ TrelloPowerUp.initialize({
     return getBadges(t);
   },*/
   'card-badges': function(t, options) {
+    return getBadges(t);
+    /*
     return t.get('card', 'shared', 'estimatedTime')
     .then(function(estimate) {
       return [{
@@ -378,6 +380,7 @@ TrelloPowerUp.initialize({
         color: 'red',
       }];  
     });
+    */
   },
   'card-buttons': function(t, options) {
     return [{
