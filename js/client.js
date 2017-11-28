@@ -85,8 +85,8 @@ var randomBadgeColor = function() {
 };
 
 var getEstimatedTime = function(t){
-  return t.card('name')
-  .get('name')
+  return t.card('estimatedTime')
+  .get('estimatedTime')
   .then(function(cardName){
     console.log('We just loaded the card name for fun: ' + cardName);
     return cardName;
