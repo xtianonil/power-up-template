@@ -14,8 +14,8 @@ t.render(function(){
   return Promise.all([
     //t.get('board', 'shared', 'fruit'),
     //t.get('board', 'private', 'vegetable'),
-    t.get('card', 'private', 'estimatedTime'),
-    t.get('card', 'private', 'actualTime')
+    t.get('card', 'shared', 'estimatedTime'),
+    t.get('card', 'shared', 'actualTime')
   ])
   .spread(function(savedEstimatedTime, savedActualTime){
     estimatedTimeSelector.value = savedEstimatedTime;
@@ -52,14 +52,14 @@ document.getElementById('save').addEventListener('click', function(){
   })
   */
   //
-  return t.set('card', 'private', 'estimatedTime', estimatedTimeSelector.value)
+  return t.set('card', 'shared', 'estimatedTime', estimatedTimeSelector.value)
   /*
   .then(function(){
     return t.set('card', 'private', 'estimatedTime', estimatedTimeSelector.value);
   })
   */
   .then(function(){
-    return t.set('card', 'private', 'actualTime', actualTimeSelector.value);
+    return t.set('card', 'shared', 'actualTime', actualTimeSelector.value);
   })
   //
   .then(function(){
