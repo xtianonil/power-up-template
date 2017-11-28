@@ -361,8 +361,16 @@ TrelloPowerUp.initialize({
     }];
   },
   'card-detail-badges': function(t, options) {
-    //return t.get('card', 'private', 'estimatedTime');
-    return getBadges(t);
+    return t.get('card', 'shared', 'estimatedTime')
+    .then(function(estimate) {
+      return [{
+        //icon: estimate ? GREY_ROCKET_ICON : WHITE_ROCKET_ICON,
+        text: 'Estimate: '+estimate || 'No Estimate!',
+        //color: estimate ? null : 'red',
+        color: 'red',
+      }];  
+    });
+    //return getBadges(t);
   },
   'card-from-url': function(t, options) {
     // options.url has the url in question
