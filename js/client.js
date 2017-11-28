@@ -3,10 +3,6 @@
 // we can access Bluebird Promises as follows
 var Promise = TrelloPowerUp.Promise;
 
-
-var estimatedTimeSelector = document.getElementById('estimatedTime');
-var actualTimeSelector = document.getElementById('actualTime');
-alert(estimatedTimeSelector.value);
 /*
 
 Trello Data Access
@@ -115,8 +111,8 @@ var getBadges = function(t){
       // its best to use static badges unless you need your badges to refresh
       // you can mix and match between static and dynamic
       title: 'Detail Badge', // for detail badges only
-      text: estimatedTimeSelector.value,
-      //text: 'Static',
+      //text: estimatedTimeSelector.value,
+      text: 'Static',
       icon: GRAY_ICON, // for card front badges only
       color: null
     }, {
