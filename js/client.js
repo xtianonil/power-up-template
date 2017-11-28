@@ -328,10 +328,21 @@ TrelloPowerUp.initialize({
       target: 'Inspiring Boards' // optional target for above url
     }];
   },
+  /*
   'card-badges': function(t, options){
     //alert(t.get('card', 'private', 'estimatedTime'));
     //return t.get('card', 'private', 'estimatedTime');
     return getBadges(t);
+  },*/
+  'card-badges': function(t, options) {
+    return t.get('card', 'private', 'estimatedTime')
+    .then(function(estimate) {
+      return [{
+        //icon: estimate ? GREY_ROCKET_ICON : WHITE_ROCKET_ICON,
+        text: estimate || 'No Estimate!',
+        color: estimate ? null : 'red',
+      }];  
+    });
   },
   'card-buttons': function(t, options) {
     return [{
