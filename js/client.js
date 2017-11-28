@@ -330,8 +330,8 @@ TrelloPowerUp.initialize({
   },
   'card-badges': function(t, options){
     //alert(t.get('card', 'private', 'estimatedTime'));
-    return t.get('card', 'private', 'estimatedTime');
-    //return getBadges(t);
+    //return t.get('card', 'private', 'estimatedTime');
+    return getBadges(t);
   },
   'card-buttons': function(t, options) {
     return [{
@@ -349,6 +349,7 @@ TrelloPowerUp.initialize({
     }];
   },
   'card-detail-badges': function(t, options) {
+    //return t.get('card', 'private', 'estimatedTime');
     return getBadges(t);
   },
   'card-from-url': function(t, options) {
