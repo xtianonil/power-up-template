@@ -17,7 +17,9 @@ t.render(function(){
     t.get('card', 'private', 'estimatedTime'),
     t.get('card', 'private', 'actualTime')
   ])
-  .spread(function(savedFruit, savedVegetable, savedEstimatedTime, savedActualTime){
+  .spread(function(savedEstimatedTime, savedActualTime){
+    estimatedTimeSelector.value = savedEstimatedTime;
+    actualTimeSelector.value = savedActualTime;
     /*if(savedFruit && /[a-z]+/.test(savedFruit)){
       fruitSelector.value = savedFruit;
     }
