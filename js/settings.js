@@ -14,8 +14,8 @@ t.render(function(){
   return Promise.all([
     t.get('board', 'shared', 'fruit'),
     t.get('board', 'private', 'vegetable'),
-    t.get('card', 'shared', 'estimatedTime'),
-    t.get('card', 'shared', 'actualTime')
+    t.get('board', 'shared', 'estimatedTime'),
+    t.get('board', 'shared', 'actualTime')
   ])
   .spread(function(savedFruit, savedVegetable, savedEstimatedTime, savedActualTime){
     if(savedFruit && /[a-z]+/.test(savedFruit)){
@@ -44,10 +44,10 @@ document.getElementById('save').addEventListener('click', function(){
   })
   //
   .then(function(){
-    return t.set('card', 'shared', 'estimatedTime', estimatedTimeSelector.value);
+    return t.set('board', 'shared', 'estimatedTime', estimatedTimeSelector.value);
   })
   .then(function(){
-    return t.set('card', 'shared', 'actualTime', actualTimeSelector.value);
+    return t.set('board', 'shared', 'actualTime', actualTimeSelector.value);
   })
   //
   .then(function(){
