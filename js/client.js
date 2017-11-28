@@ -111,8 +111,8 @@ var getBadges = function(t){
       // its best to use static badges unless you need your badges to refresh
       // you can mix and match between static and dynamic
       title: 'Detail Badge', // for detail badges only
-      text: getEstimatedTime(),
-      //text: 'Static',
+      //text: getEstimatedTime(),
+      text: 'Static',
       icon: GRAY_ICON, // for card front badges only
       color: null
     }, {
