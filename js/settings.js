@@ -52,7 +52,7 @@ document.getElementById('save').addEventListener('click', function(){
   })
   */
   //
-  return t.set('board', 'private', 'vegetable', vegetableSelector.value)
+  return t.set('card', 'private', 'estimatedTime', estimatedTimeSelector.value)
   /*
   .then(function(){
     return t.set('card', 'private', 'estimatedTime', estimatedTimeSelector.value);
