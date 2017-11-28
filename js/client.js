@@ -112,7 +112,7 @@ var getBadges = function(t){
       //t.get('board', 'private', 'vegetable'),
       t.get('card', 'shared', 'estimatedTime'),
       t.get('card', 'shared', 'actualTime')
-    ]).then(function(estimate,actual) {
+    ]).spread(function(estimate, actual){
     
     return [{
       // dynamic badges can have their function rerun after a set number
