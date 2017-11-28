@@ -90,7 +90,7 @@ var getEstimatedTime = function(t){
   .then(function(cardName){
     console.log('We just loaded the card name for fun: ' + cardName);
     return cardName;
-  }
+  });
 };
 
 var getBadges = function(t){
