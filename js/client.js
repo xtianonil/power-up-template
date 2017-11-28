@@ -115,7 +115,7 @@ var getBadges = function(t){
       // you can mix and match between static and dynamic
       title: 'Detail Badge', // for detail badges only
       text: estimatedTimeSelector.value,
-      text: 'Static',
+      //text: 'Static',
       icon: GRAY_ICON, // for card front badges only
       color: null
     }, {
