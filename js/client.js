@@ -84,11 +84,18 @@ var randomBadgeColor = function() {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
 };
 
+var getEstimatedTime = function(t){
+  return t.card('name')
+  .get('name')
+  .then(function(cardName){
+    console.log('We just loaded the card name for fun: ' + cardName);
+}
+
 var getBadges = function(t){
   return t.card('name')
   .get('name')
   .then(function(cardName){
-    console.log('We just loaded the card name for fun: ' + cardName + " " + t.card('id'));
+    console.log('We just loaded the card name for fun: ' + cardName);
     
     return [{
       // dynamic badges can have their function rerun after a set number
@@ -107,7 +114,8 @@ var getBadges = function(t){
       // its best to use static badges unless you need your badges to refresh
       // you can mix and match between static and dynamic
       title: 'Detail Badge', // for detail badges only
-      text: 'Static',
+      text: getEstimatedTime(),
+      //text: 'Static',
       icon: GRAY_ICON, // for card front badges only
       color: null
     }, {
