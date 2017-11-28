@@ -84,10 +84,6 @@ var randomBadgeColor = function() {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
 };
 
-var getEstimatedTime = function(t){
-  return t.get('card', 'private', 'estimatedTime');
-};
-
 var getBadges = function(t){
   return t.card('name')
   .get('name')
@@ -333,6 +329,7 @@ TrelloPowerUp.initialize({
     }];
   },
   'card-badges': function(t, options){
+    alert(t.get('card', 'private', 'estimatedTime'));
     return getBadges(t);
   },
   'card-buttons': function(t, options) {
