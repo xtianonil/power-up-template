@@ -101,12 +101,23 @@ var getBadges = function(t){
   .then(function(cardName){
     console.log('We just loaded the card name for fun: ' + cardName);
   */
+
+    /*
     return t.get('card', 'shared', 'estimatedTime')
     .then(function(estimate) {
+    */
+
+    return Promise.all([
+      //t.get('board', 'shared', 'fruit'),
+      //t.get('board', 'private', 'vegetable'),
+      t.get('card', 'shared', 'estimatedTime'),
+      t.get('card', 'shared', 'actualTime')
+    ]).then(function(estimate,actual) {
     
     return [{
       // dynamic badges can have their function rerun after a set number
       // of seconds defined by refresh. Minimum of 10 seconds.
+      /*
       dynamic: function(){
         // we could also return a Promise that resolves to this as well if we needed to do something async first
         return {
@@ -117,7 +128,8 @@ var getBadges = function(t){
           refresh: 10 // in seconds
         };
       }
-    }, {
+    },*/
+    {
       // its best to use static badges unless you need your badges to refresh
       // you can mix and match between static and dynamic
       //title: 'Detail Badge', // for detail badges only
@@ -125,6 +137,14 @@ var getBadges = function(t){
       //text: 'Static',
       //icon: GRAY_ICON, // for card front badges only
       color: 'red'
+    }, {
+      // its best to use static badges unless you need your badges to refresh
+      // you can mix and match between static and dynamic
+      //title: 'Detail Badge', // for detail badges only
+      text: 'Actual: '+actual || 'No Actual!',
+      //text: 'Static',
+      //icon: GRAY_ICON, // for card front badges only
+      color: 'green'
     }, {
       // card detail badges (those that appear on the back of cards)
       // also support callback functions so that you can open for example
