@@ -7,8 +7,8 @@ var fruitSelector = document.getElementById('fruit');
 var vegetableSelector = document.getElementById('vegetable');
 
 //
-var estimatedTime = document.getElementById('estimatedTime');
-var actualTime = document.getElementById('actualTime');
+var estimatedTimeSelector = document.getElementById('estimatedTime');
+var actualTimeSelector = document.getElementById('actualTime');
 
 t.render(function(){
   return Promise.all([
@@ -17,12 +17,18 @@ t.render(function(){
     t.get('card', 'shared', 'estimatedTime'),
     t.get('card', 'shared', 'actualTime')
   ])
-  .spread(function(savedFruit, savedVegetable){
+  .spread(function(savedFruit, savedVegetable, savedEstimatedTime, savedActualTime){
     if(savedFruit && /[a-z]+/.test(savedFruit)){
       fruitSelector.value = savedFruit;
     }
     if(savedVegetable && /[a-z]+/.test(savedVegetable)){
       vegetableSelector.value = savedVegetable;
+    }
+    if(savedEstimatedTime && /[a-z]+/.test(savedEstimatedTime)){
+      estimatedTimeSelector.value = savedEstimatedTime;
+    }
+    if(savedActualTime && /[a-z]+/.test(savedActualTime)){
+      actualTimeSelector.value = savedActualTime;
     }
   })
   .then(function(){
@@ -38,10 +44,10 @@ document.getElementById('save').addEventListener('click', function(){
   })
   //
   .then(function(){
-    return t.set('card', 'shared', 'estimatedTime', estimatedTime.value);
+    return t.set('card', 'shared', 'estimatedTime', estimatedTimeSelector.value);
   })
   .then(function(){
-    return t.set('card', 'shared', 'actualTime', actualTime.value);
+    return t.set('card', 'shared', 'actualTime', actualTimeSelector.value);
   })
   //
   .then(function(){
