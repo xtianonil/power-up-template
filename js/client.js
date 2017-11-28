@@ -79,8 +79,6 @@ t.getAll();
 var GLITCH_ICON = './images/glitch.svg';
 var WHITE_ICON = './images/icon-white.svg';
 var GRAY_ICON = './images/icon-gray.svg';
-var estimatedTimeSelector = document.getElementById('estimatedTime');
-alert(estimatedTimeSelector.value);
 
 var randomBadgeColor = function() {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
