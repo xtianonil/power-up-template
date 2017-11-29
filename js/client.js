@@ -145,9 +145,7 @@ var getBadges = function(t){
       //text: 'Static',
       //icon: GRAY_ICON, // for card front badges only
       color: 'green'
-    }];
-    /*
-    , {
+    }, {
       // card detail badges (those that appear on the back of cards)
       // also support callback functions so that you can open for example
       // open a popup on click
@@ -161,6 +159,8 @@ var getBadges = function(t){
           height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
         });
       }
+    }];
+    /*
     }, {
       // or for simpler use cases you can also provide a url
       // when the user clicks on the card detail badge they will
@@ -170,7 +170,8 @@ var getBadges = function(t){
       icon: GRAY_ICON, // for card front badges only
       url: 'https://trello.com/home',
       target: 'Trello Landing Page' // optional target for above url
-    }];*/
+    }];
+    */
   });
 };
 
