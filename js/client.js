@@ -136,7 +136,7 @@ var getBadges = function(t){
       text: 'Estimate: '+estimate || 'No Estimate!',
       //text: 'Static',
       //icon: GRAY_ICON, // for card front badges only
-      color: 'red'
+      color: 'blue'
     }, {
       // its best to use static badges unless you need your badges to refresh
       // you can mix and match between static and dynamic
