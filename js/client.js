@@ -145,7 +145,9 @@ var getBadges = function(t){
       //text: 'Static',
       //icon: GRAY_ICON, // for card front badges only
       color: 'green'
-    }, {
+    }];
+    /*
+    , {
       // card detail badges (those that appear on the back of cards)
       // also support callback functions so that you can open for example
       // open a popup on click
@@ -168,7 +170,7 @@ var getBadges = function(t){
       icon: GRAY_ICON, // for card front badges only
       url: 'https://trello.com/home',
       target: 'Trello Landing Page' // optional target for above url
-    }];
+    }];*/
   });
 };
 
@@ -383,6 +385,7 @@ TrelloPowerUp.initialize({
     */
   },
   'card-buttons': function(t, options) {
+    /*
     return [{
       // usually you will provide a callback function to be run on button click
       // we recommend that you use a popup on click generally
@@ -392,10 +395,11 @@ TrelloPowerUp.initialize({
     }, {
       // but of course, you could also just kick off to a url if that's your thing
       icon: GRAY_ICON,
-      text: 'Just a URL',
+      text: 'See Timesheet',
       url: 'https://developers.trello.com',
       target: 'Trello Developer Site' // optional target for above url
     }];
+    */
   },
   'card-detail-badges': function(t, options) {
     /*
