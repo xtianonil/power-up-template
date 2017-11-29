@@ -149,12 +149,12 @@ var getBadges = function(t){
       // card detail badges (those that appear on the back of cards)
       // also support callback functions so that you can open for example
       // open a popup on click
-      title: 'Popup Detail Badge', // for detail badges only
-      text: 'Popup',
+      title: ' ', // for detail badges only
+      text: 'Click to Update',
       icon: GRAY_ICON, // for card front badges only
       callback: function(context) { // function to run on click
         return context.popup({
-          title: 'Card Detail Badge Popup',
+          title: '-',
           url: './settings.html',
           height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
         });
