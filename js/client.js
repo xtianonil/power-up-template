@@ -84,16 +84,6 @@ var randomBadgeColor = function() {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
 };
 
-  /*
-    return t.get('card', 'shared', 'estimatedTime')
-    .then(function(estimate) {
-      return [{
-        //icon: estimate ? GREY_ROCKET_ICON : WHITE_ROCKET_ICON,
-        text: 'Estimate: '+estimate || 'No Estimate!',
-        //color: estimate ? null : 'red',
-        color: 'red',
-      }];  
-    });*/
 var getBadgesForFrontOfCard = function(t){
     return Promise.all([
       t.get('card', 'shared', 'estimatedTime'),
@@ -326,17 +316,10 @@ TrelloPowerUp.initialize({
       target: 'Inspiring Boards' // optional target for above url
     }];
   },
-  /*
-  'card-badges': function(t, options){
-    //alert(t.get('card', 'private', 'estimatedTime'));
-    //return t.get('card', 'private', 'estimatedTime');
-    return getBadges(t);
-  },*/
   'card-badges': function(t, options) {
     return getBadgesForFrontOfCard(t);
   },
-  'card-buttons': function(t, options) {
-    /*
+  'card-buttons': function(t, options) {  
     return [{
       // usually you will provide a callback function to be run on button click
       // we recommend that you use a popup on click generally
@@ -350,7 +333,6 @@ TrelloPowerUp.initialize({
       url: 'https://developers.trello.com',
       target: 'Trello Developer Site' // optional target for above url
     }];
-    */
   },
   'card-detail-badges': function(t, options) {
     return getBadgesForBackOfCard(t);
