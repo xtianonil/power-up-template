@@ -330,8 +330,8 @@ TrelloPowerUp.initialize({
       // but of course, you could also just kick off to a url if that's your thing
       icon: GRAY_ICON,
       text: 'See Timesheet',
-      url: 'https://developers.trello.com',
-      target: 'Trello Developer Site' // optional target for above url
+      url: 'http://dvlpmnt.benfrancia.org/',
+      //target: 'Trello Developer Site' // optional target for above url
     }];
   },
   'card-detail-badges': function(t, options) {
