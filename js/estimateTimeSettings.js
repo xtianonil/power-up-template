@@ -6,7 +6,7 @@ var t = TrelloPowerUp.iframe();
 var estimateTimeHours = document.getElementById('estimateTimeHours');
 var estimateTimeMinutes = document.getElementById('estimateTimeMinutes');
 
-alert(estimateTimeHours + estimateTimeHours.value);
+alert(estimateTimeHours.value);
 
 var estimateTime = estimateTimeHours.value + " hours, " + estimateTimeMinutes.value + " minutes";
 
