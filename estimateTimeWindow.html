@@ -2,18 +2,14 @@
   <head>
     <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
     <script src="https://trello.com/power-ups/power-up.min.js"></script>
-    <style type="text/css">
-      .numberFormat{
-          width: 30px;
-      } 
-    </style>
   </head>
   <body>
     <div id="estimateTimeDiv">
-      <p>Estimate Time</p>
-      <span><input class="numberFormat" id="estimateTimeHours" type="number" min="0" max="1000" step="1"/>hours</span>
-      <span><input class="numberFormat" id="estimateTimeMinutes" type="number" min="0" max="59" step="1"/>minutes</span>
-      <input type="text" name="" id="estimateTime"/>
+      Hours:
+      <input id="estimateTimeHours" type="number" min="0" max="1000" step="1"/>
+      Minutes:
+      <input id="estimateTimeMinutes" type="number" min="0" max="59" step="1"/>
+      <!--<input type="text" name="" id="estimateTime"/>-->
       <button id="saveEstimateTime" class="mod-primary">Save</button>
     </div>
     <script src="./js/estimateTimeSettings.js"></script>
