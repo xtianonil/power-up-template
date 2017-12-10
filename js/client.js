@@ -120,7 +120,7 @@ var getBadgesForBackOfCard = function(t){
       callback: function(context) { // function to run on click
         return context.popup({
           title: 'Estimate Time',
-          url: './settings.html',
+          url: './estimateTimeWindow.html',
           height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
         });
       }
@@ -132,7 +132,7 @@ var getBadgesForBackOfCard = function(t){
       callback: function(context) { // function to run on click
         return context.popup({
           title: 'Actual Time',
-          url: './settings.html',
+          url: './actualTimeWindow.html',
           height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
         });
       }
