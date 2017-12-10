@@ -3,12 +3,13 @@
 var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
-var estimateTimeSelector = document.getElementById('estimateTime');
+var estimateTimeHours = document.getElementById('estimateTimeHours');
+var estimateTimeMinutes = document.getElementById('estimateTimeMinutes');
+
+var estimateTime = estimateTimeHours + " hours, " + estimateTimeMinutes + " minutes"''
 
 t.render(function(){
   return Promise.all([
-    //t.get('board', 'shared', 'fruit'),
-    //t.get('board', 'private', 'vegetable'),
     t.get('card', 'shared', 'estimateTime')
   ])
   .then(function(savedEstimateTime){
@@ -21,7 +22,7 @@ t.render(function(){
 });
 
 document.getElementById('saveEstimateTime').addEventListener('click', function(){
-  return t.set('card', 'shared', 'estimateTime', estimateTimeSelector.value)
+  return t.set('card', 'shared', 'estimateTime', estimateTime)
   .then(function(){
     t.closePopup();
   });
