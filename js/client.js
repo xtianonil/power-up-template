@@ -122,6 +122,7 @@ var getBadgesForBackOfCard = function(t){
           url: './estimateTimeWindow.html',
           height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
         });
+      }
     }, {
       title: 'Actual Time:', // for detail badges only
       text: actual,
