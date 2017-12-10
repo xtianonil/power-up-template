@@ -19,7 +19,19 @@ function formatMinutes(minutes)
   if (minutes < 1)
     return "";
   else
-    return ", "+minutes + " minutes";
+    return minutes + " minutes";
+}
+
+function formatEstimate(hours,minutes)
+{
+  if (hours < 1 && minutes < 1)
+    return "";
+  else if (hours < 1 && minutes >= 1)
+    return "";
+  else if (hours >= 1 && minutes < 1)
+    return "";
+  else
+    return ", ";
 }
 
 t.render(function(){
@@ -43,7 +55,7 @@ document.getElementById('saveEstimateTime').addEventListener('click', function()
     return t.set('card', 'shared', 'estimateTimeMinutes', estimateTimeMinutes.value);
   })
   .then(function(){
-    return t.set('card', 'shared', 'estimateTime', formatHours(estimateTimeHours.value) + formatMinutes(estimateTimeMinutes.value));
+    return t.set('card', 'shared', 'estimateTime', formatHours(estimateTimeHours.value) + formatEstimate(estimateTimeHours.value,estimateTimeMinutes.value) + formatMinutes(estimateTimeMinutes.value));
   })
   .then(function(){
     t.closePopup();
