@@ -86,7 +86,7 @@ var randomBadgeColor = function() {
 
 var getBadgesForFrontOfCard = function(t){
     return Promise.all([
-      t.get('card', 'shared', 'estimatedTime'),
+      t.get('card', 'shared', 'estimateTime'),
       t.get('card', 'shared', 'actualTime')
     ]).spread(function(estimate, actual){
     
@@ -101,7 +101,7 @@ var getBadgesForFrontOfCard = function(t){
 };
 var getBadgesForBackOfCard = function(t){
     return Promise.all([
-      t.get('card', 'shared', 'estimatedTime'),
+      t.get('card', 'shared', 'estimateTime'),
       t.get('card', 'shared', 'actualTime')
     ]).spread(function(estimate, actual){
     
