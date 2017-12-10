@@ -10,6 +10,8 @@ function formatHours(hours)
 {
   if (hours < 1)
     return "";
+  else if (hours == 1)
+    return "1 hour";
   else
     return hours + " hours";
 }
@@ -18,6 +20,8 @@ function formatMinutes(minutes)
 {
   if (minutes < 1)
     return "";
+  if (minutes == 1)
+    return "1 minute";
   else
     return minutes + " minutes";
 }
