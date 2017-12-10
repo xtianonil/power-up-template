@@ -26,6 +26,7 @@ document.getElementById('saveEstimateTime').addEventListener('click', function()
   return t.set('card', 'shared', 'estimateTimeHours', estimateTimeHours.value)
   .then(function(){
     return t.set('card', 'shared', 'estimateTimeMinutes', estimateTimeMinutes.value);
+  })
   .then(function(){
     return t.set('card', 'shared', 'estimateTime', estimateTimeHours.value + " hours, " + estimateTimeMinutes.value + " minutes");
   })
