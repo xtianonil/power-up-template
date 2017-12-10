@@ -8,8 +8,8 @@ var estimateTimeMinutes = document.getElementById('estimateTimeMinutes');
 
 function formatMinutes(minutes)
 {
-  if (!minutes)
-    return;
+  if (minutes < 1)
+    return "";
   else
     return minutes + " minutes";
 }
