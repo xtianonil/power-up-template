@@ -7,18 +7,18 @@ var t = TrelloPowerUp.iframe();
 //var vegetableSelector = document.getElementById('vegetable');
 
 //
-var estimatedTimeSelector = document.getElementById('estimatedTime');
+var estimateTimeSelector = document.getElementById('estimateTime');
 var actualTimeSelector = document.getElementById('actualTime');
 
 t.render(function(){
   return Promise.all([
     //t.get('board', 'shared', 'fruit'),
     //t.get('board', 'private', 'vegetable'),
-    t.get('card', 'shared', 'estimatedTime'),
+    t.get('card', 'shared', 'estimateTime'),
     t.get('card', 'shared', 'actualTime')
   ])
-  .spread(function(savedEstimatedTime, savedActualTime){
-    estimatedTimeSelector.value = savedEstimatedTime;
+  .spread(function(savedEstimateTime, savedActualTime){
+    estimateTimeSelector.value = savedEstimateTime;
     actualTimeSelector.value = savedActualTime;
     /*if(savedFruit && /[a-z]+/.test(savedFruit)){
       fruitSelector.value = savedFruit;
@@ -26,11 +26,11 @@ t.render(function(){
     if(savedVegetable && /[a-z]+/.test(savedVegetable)){
       vegetableSelector.value = savedVegetable;
     }
-    estimatedTimeSelector.value = savedEstimatedTime;
+    estimateTimeSelector.value = savedEstimateTime;
     actualTimeSelector.value = savedActualTime;*/
     /*
-    if(savedEstimatedTime && /[a-z]+/.test(savedEstimatedTime)){
-      estimatedTimeSelector.value = savedEstimatedTime;
+    if(savedEstimateTime && /[a-z]+/.test(savedEstimateTime)){
+      estimateTimeSelector.value = savedEstimateTime;
     }
     if(savedActualTime && /[a-z]+/.test(savedActualTime)){
       actualTimeSelector.value = savedActualTime;
@@ -43,6 +43,16 @@ t.render(function(){
   })
 });
 
+document.getElementById('saveEstimateTime').addEventListener('click', function(){
+  return t.set('card', 'shared', 'estimateTime', estimateTimeSelector.value)
+  .then(function(){
+    return t.set('card', 'shared', 'actualTime', actualTimeSelector.value);
+  })
+  .then(function(){
+    t.closePopup();
+  })
+})
+
 document.getElementById('save').addEventListener('click', function(){
 
   /*
@@ -52,10 +62,10 @@ document.getElementById('save').addEventListener('click', function(){
   })
   */
   //
-  return t.set('card', 'shared', 'estimatedTime', estimatedTimeSelector.value)
+  return t.set('card', 'shared', 'estimateTime', estimateTimeSelector.value)
   /*
   .then(function(){
-    return t.set('card', 'private', 'estimatedTime', estimatedTimeSelector.value);
+    return t.set('card', 'private', 'estimateTime', estimateTimeSelector.value);
   })
   */
   .then(function(){
