@@ -12,7 +12,6 @@ t.render(function(){
     t.get('card', 'shared', 'estimateTimeMinutes')
   ])
   .spread(function(savedEstimateTimeHours,savedEstimateTimeMinutes){
-    //estimateTime = savedEstimateTimeHours;
     estimateTimeHours.value = savedEstimateTimeHours;
     estimateTimeMinutes.value = savedEstimateTimeMinutes;
   })
@@ -28,7 +27,7 @@ document.getElementById('saveEstimateTime').addEventListener('click', function()
     return t.set('card', 'shared', 'estimateTimeMinutes', estimateTimeMinutes.value);
   })
   .then(function(){
-    return t.set('card', 'shared', 'estimateTime', estimateTimeHours.value + " hours, " + estimateTimeMinutes.value + " minutes");
+    return t.set('card', 'shared', 'estimateTime', estimateTimeHours.value + " hours, " + (estimateTimeMinutes.value<10?("0"+estimateTimeMinutes.value):estimateTimeMinutes.value) + " minutes");
   })
   .then(function(){
     t.closePopup();
