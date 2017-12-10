@@ -6,6 +6,34 @@ var t = TrelloPowerUp.iframe();
 var actualTimeHours = document.getElementById('actualTimeHours');
 var actualTimeMinutes = document.getElementById('actualTimeMinutes');
 
+function formatHours(hours)
+{
+  if (hours < 1)
+    return "";
+  else
+    return hours + " hours";
+}
+
+function formatMinutes(minutes)
+{
+  if (minutes < 1)
+    return "";
+  else
+    return minutes + " minutes";
+}
+
+function formatActual(hours,minutes)
+{
+  if (hours < 1 && minutes < 1)
+    return "";
+  else if (hours < 1 && minutes >= 1)
+    return "";
+  else if (hours >= 1 && minutes < 1)
+    return "";
+  else
+    return ", ";
+}
+
 t.render(function(){
   return Promise.all([
     t.get('card', 'shared', 'actualTimeHours'),
@@ -27,7 +55,7 @@ document.getElementById('saveActualTime').addEventListener('click', function(){
     return t.set('card', 'shared', 'actualTimeMinutes', actualTimeMinutes.value);
   })
   .then(function(){
-    return t.set('card', 'shared', 'actualTime', actualTimeHours.value + " hours, " + actualTimeMinutes.value + " minutes");
+    return t.set('card', 'shared', 'actualTime', formatHours(actualTimeHours.value) + formatActual(actualTimeHours.value,actualTimeMinutes.value) + formatMinutes(actualTimeMinutes.value));
   })
   .then(function(){
     t.closePopup();
