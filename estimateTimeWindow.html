@@ -8,7 +8,7 @@
       Hours:
       <input id="estimateTimeHours" type="number" min="0" max="1000" step="1"/>
       Minutes:
-      <input id="estimateTimeMinutes" type="number" min="0" max="59" step="1"/>
+      <input id="estimateTimeMinutes" type="number" min="0" max="59" step="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2" />
       <!--<input type="text" name="" id="estimateTime"/>-->
       <button id="saveEstimateTime" class="mod-primary">Save</button>
     </div>
