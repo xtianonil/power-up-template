@@ -55,7 +55,7 @@ document.getElementById('saveEstimateTime').addEventListener('click', function()
     return t.set('card', 'shared', 'estimateTimeMinutes', estimateTimeMinutes.value);
   })
   .then(function(){
-    return t.set('card', 'shared', 'estimateTime', formatHours(estimateTimeHours.value) + ", " + formatMinutes(estimateTimeMinutes.value));
+    return t.set('card', 'shared', 'estimateTime', formatHours(estimateTimeHours.value) + formatEstimate(estimateTimeHours.value,estimateTimeMinutes.value) + formatMinutes(estimateTimeMinutes.value));
   })
   .then(function(){
     t.closePopup();
