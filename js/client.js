@@ -112,7 +112,7 @@ var getBadgesForBackOfCard = function(t){
       text: 'Actual: '+actual || 'No Actual!',
       color: 'green'
     }, {
-      title: 'Estimate:', // for detail badges only
+      title: 'Estimate Time:', // for detail badges only
       text: estimate,
       color: 'blue',
       icon: GRAY_ICON, // for card front badges only
@@ -120,6 +120,17 @@ var getBadgesForBackOfCard = function(t){
         return context.popup({
           title: '',
           url: './estimateTimeWindow.html',
+          height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
+        });
+    }, {
+      title: 'Actual Time:', // for detail badges only
+      text: actual,
+      color: 'green',
+      icon: GRAY_ICON, // for card front badges only
+      callback: function(context) { // function to run on click
+        return context.popup({
+          title: '',
+          url: './actualTimeWindow.html',
           height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
         });
       }
