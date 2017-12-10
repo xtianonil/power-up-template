@@ -105,13 +105,14 @@ var getBadgesForBackOfCard = function(t){
       t.get('card', 'shared', 'actualTime')
     ]).spread(function(estimate, actual){
     
-    return [{
+    return [
+    /*{
       text: 'Estimate: '+estimate || 'No Estimate!',
       color: 'blue'
     }, {
       text: 'Actual: '+actual || 'No Actual!',
       color: 'green'
-    }, {
+    }, */{
       title: 'Estimate Time ⏰', // for detail badges only
       text: estimate,
       color: 'blue',
