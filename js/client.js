@@ -117,7 +117,7 @@ var getBadgesForBackOfCard = function(t){
       icon: GRAY_ICON, // for card front badges only
       callback: function(context) { // function to run on click
         return context.popup({
-          title: ' ',
+          title: 'Estimate',
           url: './settings.html',
           height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
         });
