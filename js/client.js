@@ -49,15 +49,19 @@ t.render(function(){
   })
 });
 
-document.getElementById('saveEstimateTime').addEventListener('click', function(){
-  return t.set('card', 'shared', 'estimateTimeHours', estimateTimeHours.value)
-  .then(function(){
-    return t.set('card', 'shared', 'estimateTimeMinutes', estimateTimeMinutes.value);
-  })
-  .then(function(){
-    return t.set('card', 'shared', 'estimateTime', formatHours(estimateTimeHours.value) + formatEstimate(estimateTimeHours.value,estimateTimeMinutes.value) + formatMinutes(estimateTimeMinutes.value));
-  })
-  .then(function(){
-    t.closePopup();
+var el = document.getElementById('saveEstimateTime');
+if(el)
+{
+  el.addEventListener('click', function(){
+    return t.set('card', 'shared', 'estimateTimeHours', estimateTimeHours.value)
+    .then(function(){
+      return t.set('card', 'shared', 'estimateTimeMinutes', estimateTimeMinutes.value);
+    })
+    .then(function(){
+      return t.set('card', 'shared', 'estimateTime', formatHours(estimateTimeHours.value) + formatEstimate(estimateTimeHours.value,estimateTimeMinutes.value) + formatMinutes(estimateTimeMinutes.value));
+    })
+    .then(function(){
+      t.closePopup();
+    });
   });
-});
+}
