@@ -112,8 +112,9 @@ var getBadgesForBackOfCard = function(t){
       text: 'Actual: '+actual || 'No Actual!',
       color: 'green'
     }, {
-      title: 'Estimate', // for detail badges only
+      title: 'Estimate:', // for detail badges only
       text: estimate,
+      color: 'blue',
       icon: GRAY_ICON, // for card front badges only
       callback: function(context) { // function to run on click
         return context.popup({
