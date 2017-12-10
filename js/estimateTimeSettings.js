@@ -12,9 +12,10 @@ t.render(function(){
   return Promise.all([
     t.get('card', 'shared', 'estimateTime')
   ])
-  .then(function(savedEstimateTime){
-    //estimateTime = savedEstimateTime;
-    estimateTimeHours.value = savedEstimateTime;
+  .then(function(savedEstimateTimeHours,savedEstimateTimeMinutes){
+    //estimateTime = savedEstimateTimeHours;
+    estimateTimeHours.value = savedEstimateTimeHours;
+    estimateTimeMinutes.value = savedEstimateTimeMinutes;
   })
   .then(function(){
     t.sizeTo('#estimateTimeDiv')
@@ -23,7 +24,10 @@ t.render(function(){
 });
 
 document.getElementById('saveEstimateTime').addEventListener('click', function(){
-  return t.set('card', 'shared', 'estimateTime', estimateTime)
+  return t.set('card', 'shared', 'estimateTimeHours', estimateTimeHours.value)
+  .then(function(){
+    return t.set('card', 'shared', 'estimateTimeMinutes', estimateTimeMinutes.value);
+  })
   .then(function(){
     t.closePopup();
   });
