@@ -13,7 +13,8 @@ t.render(function(){
     t.get('card', 'shared', 'estimateTime')
   ])
   .then(function(savedEstimateTime){
-    estimateTime = savedEstimateTime;
+    //estimateTime = savedEstimateTime;
+    estimateTimeHours.value = savedEstimateTime;
   })
   .then(function(){
     t.sizeTo('#estimateTimeDiv')
