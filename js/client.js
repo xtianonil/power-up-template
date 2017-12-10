@@ -112,7 +112,7 @@ var getBadgesForBackOfCard = function(t){
       text: 'Actual: '+actual || 'No Actual!',
       color: 'green'
     }, {
-      title: 'Estimate Time:', // for detail badges only
+      title: 'Estimate Time ⏰', // for detail badges only
       text: estimate,
       color: 'blue',
       icon: GRAY_ICON, // for card front badges only
@@ -124,7 +124,7 @@ var getBadgesForBackOfCard = function(t){
         });
       }
     }, {
-      title: 'Actual Time:', // for detail badges only
+      title: 'Actual Time ⌛', // for detail badges only
       text: actual,
       color: 'green',
       icon: GRAY_ICON, // for card front badges only
