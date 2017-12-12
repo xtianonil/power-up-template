@@ -8,16 +8,12 @@
       $(function(){
 
         //see to it that user only inputs numbers
-        //jQuery('.numeric').numeric();
-        
         $('.numeric').keydown(function(e){
           // prevent: "e", "=", ",", "-", "."
           if ([69, 187, 188, 189, 190].includes(e.keyCode)) {
-            alert(e.keyCode);
             e.preventDefault();
-
           }
-        });
+        });//end of numeric keydown
 
         $("#estimateTimeMinutes").keyup(function(){ //estimate time minutes validation
           if ($("#estimateTimeMinutes").val() > 99){  //dont allow numbers with more than 2 placeholders
