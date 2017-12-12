@@ -91,7 +91,7 @@ var getBadgesForFrontOfCard = function(t){
     ]).spread(function(estimate, actual){
     
     return [{
-      text: 'Estimate: '+estimate || 'No Estimate!',
+      text: 'Estimate: '+'No Estimate!',
       color: 'blue'
     }, {
       text: 'Actual: '+actual || 'No Actual!',
