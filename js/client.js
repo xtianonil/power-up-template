@@ -91,10 +91,10 @@ var getBadgesForFrontOfCard = function(t){
     ]).spread(function(estimate, actual){
     
     return [{
-      text: 'Estimate: '+ (typeof estimate == 'undefined') ? "n/a" : estimate,
+      text: 'Estimate: '+ ((typeof estimate == 'undefined') ? "n/a" : estimate),
       color: 'blue'
     }, {
-      text: 'Actual: '+ (typeof actual == 'undefined') ? "n/a" : actual,
+      text: 'Actual: '+ ((typeof actual == 'undefined') ? "n/a" : actual),
       color: 'green'
     }];
   });
