@@ -11,6 +11,9 @@
           if ($("#estimateTimeMinutes").val() > 99){  //dont allow numbers with more than 2 placeholders
             $("#estimateTimeMinutes").val( Math.floor($("#estimateTimeMinutes").val() / 10) );
           }
+          else if ($("#estimateTimeMinutes").val() > 59){  //dont allow numbers more than 59
+            $("#estimateTimeMinutes").val("59");
+          }
 
         });//end of estimateTimeMinutes keyup
       });//end of $(function)
