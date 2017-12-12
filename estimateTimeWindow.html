@@ -8,7 +8,7 @@
       $(function(){
 
         //see to it that user only inputs numbers
-        $('.numeric').keydown(function(){
+        $('.numeric').keydown(function(e){
           // prevent: "e", "=", ",", "-", "."
           if ([69, 187, 188, 189, 190].includes(e.keyCode)) {
             e.preventDefault();
