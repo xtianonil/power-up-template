@@ -4,40 +4,17 @@
     <script src="https://trello.com/power-ups/power-up.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-      $(function(){
-
-        //see to it that user only inputs numbers
-        $('.numeric').keydown(function(e){
-          // prevent: "e", "=", ",", "-", "."
-          if ([69, 187, 188, 189, 190].includes(e.keyCode)) {
-            e.preventDefault();
-          }
-        });//end of numeric keydown
-
-        $("#estimateTimeMinutes").keyup(function(){ //estimate time minutes validation
-          if ($("#estimateTimeMinutes").val() > 99){  //dont allow numbers with more than 2 placeholders
-            $("#estimateTimeMinutes").val( Math.floor($("#estimateTimeMinutes").val() / 10) );
-          }
-          else if ($("#estimateTimeMinutes").val() > 59){  //dont allow numbers more than 59
-            $("#estimateTimeMinutes").val("59");
-          }
-        });//end of estimateTimeMinutes keyup
-
-
-      });//end of $(function)
-    </script>
+    <script src="./js/validateInput.js"></script>
   </head>
   <body>
     <div id="estimateTimeDiv">
       Hours:
-      <input class="numeric" id="estimateTimeHours" type="number" min="0" max="1000" step="1"/>
+      <input class="numeric hours" id="estimateTimeHours" type="number" min="0" max="1000" step="1"/>
       Minutes:
-      <input class="numeric" id="estimateTimeMinutes" type="number" min="0" max="59" step="1"/>
+      <input class="numeric minutes" id="estimateTimeMinutes" type="number" min="0" max="59" step="1"/>
       <!--<input type="text" name="" id="estimateTime"/>-->
       <button id="saveEstimateTime" class="mod-primary">Save</button>
     </div>
     <script src="./js/estimateTimeSettings.js"></script>
   </body>
 </html>
-
