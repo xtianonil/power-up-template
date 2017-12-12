@@ -14,5 +14,5 @@ $(".numeric.minutes").keyup(function(){ //estimate time minutes validation
 
 $(".numeric.hours").keyup(function(){ //estimate time hours validation
   if ($(".numeric.hours").val() > 999)  //dont allow numbers with more than 3 place values
-    $(".numeric.hours").val( Math.floor($(".numeric.hours").val() / 100) );
+    $(".numeric.hours").val( Math.floor($(".numeric.hours").val() / 10) );
 });
