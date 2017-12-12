@@ -6,10 +6,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       $(function(){
-        $("#estimateTimeMinutes").keyup(function(){
-          if ($("#estimateTimeMinutes").val() > 99){
-            $("#estimateTimeMinutes").val( $("#estimateTimeMinutes").val() / 10 );
+        $("#estimateTimeMinutes").keyup(function(){ //estimate time minutes validation
+
+          if ($("#estimateTimeMinutes").val() > 99){  //dont allow numbers with more than 2 placeholders
+            $("#estimateTimeMinutes").val( Math.floor($("#estimateTimeMinutes").val() / 10) );
           }
+
         });//end of estimateTimeMinutes keyup
       });//end of $(function)
     </script>
