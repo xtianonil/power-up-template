@@ -114,7 +114,7 @@ var getBadgesForBackOfCard = function(t){
       color: 'green'
     }, */{
       title: 'Estimate Time ⏰', // for detail badges only if (typeof myVar != 'undefined')
-      text: (typeof estimate == 'undefined') ? "n/a" : estimate,
+      text: (typeof estimate == 'undefined') ? "Add estimate time" : estimate,
       color: 'blue',
       icon: GRAY_ICON, // for card front badges only
       callback: function(context) { // function to run on click
@@ -126,7 +126,7 @@ var getBadgesForBackOfCard = function(t){
       }
     }, {
       title: 'Actual Time ⌛', // for detail badges only
-      text: actual,
+      text: (typeof actual == 'undefined') ? "Add actual time" : actual,
       color: 'green',
       icon: GRAY_ICON, // for card front badges only
       callback: function(context) { // function to run on click
