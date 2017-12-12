@@ -19,4 +19,4 @@ $(".numeric.hours").keyup(function(){ //estimate time hours validation
 
 
 //insert a space before badge div
-$(".badges.plugin-color-blue").prepend("<div style='margin-bottom:5px;'>");
+$(".badge.plugin-color-blue").prepend("<div style='margin-bottom:5px;'>");
