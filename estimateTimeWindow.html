@@ -6,29 +6,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       $(function(){
-        $("#estimateTimeMinutes").keyup(function(){ //estimate time minutes validation
 
-          //see to it that user only inputs numbers
-          //$(".numeric").numeric();
-          $('.numeric').keyup(function(){
-            alert("sdfs");
-            var regex = new RegExp("^[a-zA-Z0-9]+$");
-            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-            if (!regex.test(key)) {
-               event.preventDefault();
-               return false;
-            }
+        //see to it that user only inputs numbers
+        $('.numeric').keydown(function(){
+          // prevent: "e", "=", ",", "-", "."
+          if ([69, 187, 188, 189, 190].includes(e.keyCode)) {
+            e.preventDefault();
+          }
         });
 
+        $("#estimateTimeMinutes").keyup(function(){ //estimate time minutes validation
           if ($("#estimateTimeMinutes").val() > 99){  //dont allow numbers with more than 2 placeholders
             $("#estimateTimeMinutes").val( Math.floor($("#estimateTimeMinutes").val() / 10) );
           }
           else if ($("#estimateTimeMinutes").val() > 59){  //dont allow numbers more than 59
             $("#estimateTimeMinutes").val("59");
           }
-
-
         });//end of estimateTimeMinutes keyup
+
+
       });//end of $(function)
     </script>
   </head>
