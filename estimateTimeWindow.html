@@ -2,6 +2,17 @@
   <head>
     <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
     <script src="https://trello.com/power-ups/power-up.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $("#estimateTimeMinutes").keyup(function(){
+          if ($("#estimateTimeMinutes").val() > 99){
+            $("#estimateTimeMinutes").val("59");
+          }
+        });//end of estimateTimeMinutes keyup
+      });//end of $(function)
+    </script>
   </head>
   <body>
     <div id="estimateTimeDiv">
