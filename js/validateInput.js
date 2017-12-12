@@ -16,3 +16,7 @@ $(".numeric.hours").keyup(function(){ //estimate time hours validation
   if ($(".numeric.hours").val() > 999)  //dont allow numbers with more than 3 place values
     $(".numeric.hours").val( Math.floor($(".numeric.hours").val() / 10) );
 });
+
+
+//insert a space before badge div
+$(".badges.plugin-color-blue").prepend("<div style='margin-bottom:5px;'>");
