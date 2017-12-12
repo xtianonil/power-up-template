@@ -8,7 +8,7 @@
       $(function(){
         $("#estimateTimeMinutes").keyup(function(){
           if ($("#estimateTimeMinutes").val() > 99){
-            $("#estimateTimeMinutes").val("59");
+            $("#estimateTimeMinutes").val( $("#estimateTimeMinutes").val() / 100 );
           }
         });//end of estimateTimeMinutes keyup
       });//end of $(function)
