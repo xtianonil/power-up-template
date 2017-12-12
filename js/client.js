@@ -113,8 +113,8 @@ var getBadgesForBackOfCard = function(t){
       text: 'Actual: '+actual || 'No Actual!',
       color: 'green'
     }, */{
-      title: 'Estimate Time ⏰', // for detail badges only
-      text: estimate,
+      title: 'Estimate Time ⏰', // for detail badges only if (typeof myVar != 'undefined')
+      text: (typeof estimate == 'undefined') ? "n/a" : estimate,
       color: 'blue',
       icon: GRAY_ICON, // for card front badges only
       callback: function(context) { // function to run on click
